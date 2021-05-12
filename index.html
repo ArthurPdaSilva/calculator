@@ -21,21 +21,25 @@
             <button class="number" onclick="calc(7)">7</button>
             <button class="number" onclick="calc(8)">8</button>
             <button class="number" onclick="calc(9)">9</button>
-            <button class="operator">÷</button>
-            <button class="number" onclick="calc(6)">6</button>
-            <button class="number" onclick="calc(5)">5</button>
+            <button class="operator" onclick="calc('/')">÷</button>
             <button class="number" onclick="calc(4)">4</button>
-            <button class="operator">X</button>
-            <button class="number" onclick="calc(3)">3</button>
-            <button class="number" onclick="calc(2)">2</button>
+            <button class="number" onclick="calc(5)">5</button>
+            <button class="number" onclick="calc(6)">6</button>
+            <button class="operator" onclick="calc('*')">X</button>
             <button class="number" onclick="calc(1)">1</button>
-            <button class="operator">-</button>
-            <button class="special">C</button>
-            <button class="number" onclick="calc()">0</button>
-            <button class="special">,</button>
-            <button class="operator">+</button>  
+            <button class="number" onclick="calc(2)">2</button>
+            <button class="number" onclick="calc(3)">3</button>
+            <button class="operator" onclick="calc('-')">-</button>
+            <button class="special clear">C</button>
+            <button class="number" onclick="calc(0)">0</button>
+            <button class="special" onclick="calc('.')">,</button>
+            <button class="special" onclick="calc('(')">(</button>
+            <button class="special" onclick="calc(')')">)</button>
+            <button class="operator" onclick="calc('+')">+</button>  
+            <button class="operator" onclick="result()">=</button>
         </div>
     </div>
-
+    
+    <script src="src/dinamic/calculator.js"></script>
 </body>
 </html>

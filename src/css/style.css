@@ -21,8 +21,9 @@ div.container{
     display: flex;
     flex-direction: column;
     width: 40vw;
-    /* height: 60vh; */
+    background-color: transparent;
     box-sizing: border-box;
+    box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.205);
 }
 
 /* Sides */
@@ -31,6 +32,7 @@ div.top, div.bottom{
     height: 50%;
     box-sizing: border-box;
     padding: 1em;
+    box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.205);
 }
 
 /* Upside */
@@ -89,4 +91,19 @@ div.bottom button.operator{
     background-color: #A7ACA3 
 }
 
+div.bottom button:nth-child(12){
+    grid-column-start: 3;
+    grid-row: 5;
+}
+
+div.bottom button:nth-child(18){
+    max-height: 60vh;
+    grid-column: 4;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+div.bottom button:nth-child(19){
+    grid-column-start: 4;
+}
 
