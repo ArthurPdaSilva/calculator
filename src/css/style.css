@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+/* All */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Body */
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Calculator */
+div.container{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    /* height: 60vh; */
+    box-sizing: border-box;
+}
+
+/* Sides */
+div.top, div.bottom{
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+    padding: 1em;
+}
+
+/* Upside */
+div.top{
+    background-color: #2E2E2E;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em;
+    height: 35vh;
+}
+
+div.top h1{
+    color: white;
+    font-size: 3em;
+}
+
+/* Field by upside */
+div.top input{
+    height: 12vh;
+    width: 100%;
+    border: .5em solid white;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: #849180;
+    border-radius: .5em;
+}
+
+div.bottom{
+    display: grid;
+    gap: .5em;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #C1BCB5;
+    height: 60vh;
+    border-bottom-left-radius: .5em;
+    border-bottom-right-radius: .5em;
+}
+
+div.bottom button{
+    color: white;
+    border: none;
+    box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.205);
+    border-radius: .5em;
+    font-size: 1.2em;
+    max-height: 10vh;
+    font-weight: bold;
+}
+
+div.bottom button.number, div.bottom button.special{
+    background-color: #2E2E2E;
+}
+
+div.bottom button.operator{
+    background-color: #A7ACA3 
+}
+
+
