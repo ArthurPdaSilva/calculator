@@ -4,37 +4,35 @@ let testValue = [];
 
 // Calculator System
 function calc(x){
-    if(verified(x)){
-        testValue.push(x);
-        field.value += x;
-    }else{
-        return false;
-    }
-    console.log(testValue);
+    testValue = [];
+    field.value += x;
 }
 
-function verified(x){
-    if(testValue.indexOf(x) == -1){
-        return true;
+// Verified of the value
+// testValue.push('.', '*', '/', '(', ')', '-', '+');
+
+function operator(y = 0){
+    console.log(testValue[testValue.length -1]);
+    if(field.value.length == 0){
+        if(y == '*' || y == '/' || y == '.' || y == ')'){
+            return false;
+        }else{
+            testValue.push('-', '+', '(');
+            field.value += y;
+        }
     }else{
-        switch (x) {
-            case '.':
-                return false;
-            case '(':
-                return false;
-            case ')':
-                return false;
-            case '+':
-                return false;
-            case '-':
-                return false;
-            case '*':
-                return false;
-            case '/':
-                return false;
-                    
-            default:
-                return true
+        if(testValue.includes(y)){
+            return false;
+        }else{
+            field.value += y;
+            if(y == '*' || y == '/'){
+                testValue.push('*', '/', '.');
+            }else if(y == '+' || y == '-'){
+                testValue.push('-', '+', '.');
+            }else if(y == ')' || y == '('){
+                testValue.push('(', ')', '.');
+            }
+            // testValue.push('.', '*', '/', '-', '+');
         }
     }
 }
@@ -48,5 +46,6 @@ let button = document.querySelector("button.clear").addEventListener('click', ()
 
 // Show the result
 function result(){
-
+    let result = eval(field.value);
+    field.value = result
 }

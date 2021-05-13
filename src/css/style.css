@@ -81,6 +81,7 @@ div.bottom button{
     font-size: 1.2em;
     max-height: 10vh;
     font-weight: bold;
+    cursor: pointer;
 }
 
 div.bottom button.number, div.bottom button.special{
