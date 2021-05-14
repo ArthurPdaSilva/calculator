@@ -12,12 +12,11 @@ function calc(x){
 // testValue.push('.', '*', '/', '(', ')', '-', '+');
 
 function operator(y = 0){
-    console.log(testValue[testValue.length -1]);
     if(field.value.length == 0){
-        if(y == '*' || y == '/' || y == '.' || y == ')'){
+        if(y == '*' || y == '/' || y == '.' || y == ')' || y == '+'){
             return false;
         }else{
-            testValue.push('-', '+', '(');
+            testValue.push('-', '(');
             field.value += y;
         }
     }else{
@@ -47,5 +46,5 @@ let button = document.querySelector("button.clear").addEventListener('click', ()
 // Show the result
 function result(){
     let result = eval(field.value);
-    field.value = result
+    field.value = result == undefined ? '' : result;
 }
