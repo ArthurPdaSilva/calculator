@@ -1,44 +1,37 @@
 // Variable
 let field = document.querySelector("input.field");
-let testValue = [];
+let testValue = ['*','/','.',')'];
+let initValue = ['+','-','*','/','.']
 
 // Calculator System
 function calc(x){
-    testValue = [];
     field.value += x;
 }
 
 // Verified of the value
 // testValue.push('.', '*', '/', '(', ')', '-', '+');
-
 function operator(y = 0){
-    if(field.value.length == 0){
-        if(y == '*' || y == '/' || y == '.' || y == ')' || y == '+'){
-            return false;
-        }else{
-            testValue.push('-', '(');
-            field.value += y;
-        }
-    }else{
-        if(testValue.includes(y)){
-            return false;
-        }else{
-            field.value += y;
-            if(y == '*' || y == '/'){
-                testValue.push('*', '/', '.');
-            }else if(y == '+' || y == '-'){
-                testValue.push('-', '+', '.');
-            }else if(y == ')' || y == '('){
-                testValue.push('(', ')', '.');
-            }
-            // testValue.push('.', '*', '/', '-', '+');
-        }
+    if(field.value.length == 0 && testValue.includes(y)){ //2s
+        return false;                                     //1s
+        
     }
-}
+    let penultimate = field.value[field.value.length-1]  //2s
+    if(initValue.includes(penultimate) && y !='('){  //2s
+        return false; //1s
+    }
+    if(penultimate=='(' && y=='.'){ //2s
+        return false;  //1s
+    }
+    if(penultimate=='(' && y=='(' ||
+    penultimate==')' && y==')'){ //4s
+        return false;  //1s
+    }
+    field.value += y; //1s
 
+    //17 sec
+}
 // Clear the Field
 let button = document.querySelector("button.clear").addEventListener('click', () => {
-    testValue = [];
     field.value = '';
 })
 
@@ -46,5 +39,5 @@ let button = document.querySelector("button.clear").addEventListener('click', ()
 // Show the result
 function result(){
     let result = eval(field.value);
-    field.value = result == undefined ? '' : result;
+    field.value = result==undefined?'':result;
 }
